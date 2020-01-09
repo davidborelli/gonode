@@ -41,3 +41,7 @@ Todas as instalações de dependências são instaladas separadamente
 #### Email
 
 `adonis install @adonisjs/mail`
+
+#### Validator
+
+`adonis install @adonisjs/validator`
