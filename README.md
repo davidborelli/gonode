@@ -28,6 +28,16 @@ Para listar as rotas(controllers): </br>
 Quando o fonte ainda não foi repassado para nenhum dev. e a mesma ainda não foi versionado, e é desejado alterar um "model", pode-se utilizar o seguinte comando para dar rollback nas migrações e fazer a alteração desejada: </br>
 `adonis migration:rollback`
 
-#### Instalando dependências
+Criar um novo model, e também a migração e controller: </br>
+`adonis make:model File -m -c`
 
-Sempre que instalar uma nova dependência
+> -m = cria o Migration
+> -c = cria o Controller
+
+### Instalando dependências
+
+Todas as instalações de dependências são instaladas separadamente
+
+#### Email
+
+`adonis install @adonisjs/mail`
