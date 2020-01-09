@@ -5,7 +5,7 @@
 Instalar CLI do Adonis:
 `npm install -g @adonisjs/cli`
 
-Para ver os comandos disponíveis:
+Para ver os comandos disponíveis: </br>
 `adonis`
 
 Informações de um comando em específico:
