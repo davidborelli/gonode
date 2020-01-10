@@ -1,3 +1,5 @@
+const Antl = use('Antl')
+
 class User {
   /*
     Adonis por padrão já para no primeiro erro, passando esse
@@ -13,6 +15,10 @@ class User {
       email: 'required|email|unique:users',
       password: 'required|confirmed',
     }
+  }
+
+  get messages() {
+    return Antl.list('validation')
   }
 }
 
