@@ -1,35 +1,42 @@
-# API utilizando AdonisJS
 
-> Aqui será inserido informaços ref. ao AdonisJS e seu ecossistema.
-
+## API utilizando AdonisJS
 <strong>Documentação: https://adonisjs.com/docs </strong>
 
-Instalar CLI do Adonis: </br>
-`npm install -g @adonisjs/cli`
+### Sobre
+<p> Sistema para gerenciamento de projetos e tarefas, onde podem ser criados projetos 
+e vincular pessoas (time), e designar tarefas à pessoas específicas. </p>
 
-Para ver os comandos disponíveis: </br>
-`adonis`
+### Tecnologia Utilizada
+* AdonisJS
 
-Informações de um comando em específico: </br>
-`adonis new -h`
+### Anotações
+- Instalar CLI do Adonis: </br>
+  - `npm install -g @adonisjs/cli`
 
-Para iniciar o servidor do projeto e iniciar o Nodemon, que é o responsável pelo live reload: </br>
-`adonis serve --dev`
 
-Executar as migrações no banco de dados, (Executar somente depois de configurar o BD em <strong>config > database.js</strong>): </br>
-`adonis migration:run`
+- Para ver os comandos disponíveis: </br>
+  - `adonis`
 
-Criar um <strong>controller</strong>: </br>
-`adonis make:controller User`
+- Informações de um comando em específico: </br>
+  - `adonis new -h`
 
-Para listar as rotas(controllers): </br>
-`adonis route:list`
+- Para iniciar o servidor do projeto e iniciar o Nodemon, que é o responsável pelo live reload: </br>
+  - `adonis serve --dev`
 
-Quando o fonte ainda não foi repassado para nenhum dev. e a mesma ainda não foi versionado, e é desejado alterar um "model", pode-se utilizar o seguinte comando para dar rollback nas migrações e fazer a alteração desejada: </br>
-`adonis migration:rollback`
+- Executar as migrações no banco de dados, (Executar somente depois de configurar o BD em <strong>config > database.js</strong>): </br>
+  - `adonis migration:run`
 
-Criar um novo model, e também a migração e controller: </br>
-`adonis make:model File -m -c`
+- Criar um <strong>controller</strong>: </br>
+  - `adonis make:controller User`
+
+- Para listar as rotas(controllers): </br>
+  - `adonis route:list`
+
+- Quando o fonte ainda não foi repassado para nenhum dev. e a mesma ainda não foi versionado, e é desejado alterar um "model", pode-se utilizar o seguinte comando para dar rollback nas migrações e fazer a alteração desejada: </br>
+  - `adonis migration:rollback`
+
+- Criar um novo model, e também a migração e controller: </br>
+  - `adonis make:model File -m -c`
 
 > -m = cria o Migration
 > -c = cria o Controller
@@ -45,3 +52,13 @@ Todas as instalações de dependências são instaladas separadamente
 #### Validator
 
 `adonis install @adonisjs/validator`
+
+- Criar um validator: </br>
+  - `adonis make:validator User`
+
+- Criar uma exceção para lidar com os erros de validação: </br>
+  - `adonis make:ehandler`
+
+#### Internacionalização
+
+`adonis install @adonisjs/antl`
