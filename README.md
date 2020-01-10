@@ -1,6 +1,5 @@
 
 ## API utilizando AdonisJS
-<strong>Documentação: https://adonisjs.com/docs </strong>
 
 ### Sobre
 <p> Sistema para gerenciamento de projetos e tarefas, onde podem ser criados projetos 
@@ -8,6 +7,7 @@ e vincular pessoas (time), e designar tarefas à pessoas específicas. </p>
 
 ### Tecnologia Utilizada
 * AdonisJS
+<strong>Documentação: https://adonisjs.com/docs </strong>
 
 ### Anotações
 - Instalar CLI do Adonis: </br>
