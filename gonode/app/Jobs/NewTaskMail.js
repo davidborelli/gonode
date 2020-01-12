@@ -1,5 +1,6 @@
 const Mail = use('Mail')
 const Helpers = use('Helpers')
+cont Env = use('Env')
 
 class NewTaskMail {
   static get concurrency() {
@@ -21,7 +22,7 @@ class NewTaskMail {
       message => {
         message
           .to(email)
-          .from('gonode@gonode.com.br', 'Suporte | GoNode')
+          .from(Env.get('MAIL_SENDER_EMAIL'), Env.get('MAIL_SENDER_NAME'))
           .subject('Nova tarefa para você')
 
         if (file) {
