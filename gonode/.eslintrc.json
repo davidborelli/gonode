@@ -18,6 +18,7 @@
     "class-methods-use-this": "off",
     "no-param-reassign": "off",
     "consistent-return": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "no-multi-assign": "off"
   }
 }
