@@ -1,9 +1,10 @@
 const Schema = use('Schema')
 
-class InviteSchema extends Schema {
+class TeamSchema extends Schema {
   up() {
-    this.create('invites', table => {
+    this.create('teams', table => {
       table.increments()
+      table.string('name').notNullable()
       table
         .integer('user_id')
         .unsigned()
@@ -13,21 +14,16 @@ class InviteSchema extends Schema {
         .onUpdate('CASCADE')
         .onDelete('CASCADE')
       table
-        .integer('team_id')
-        .unsigned()
+        .string('slug')
         .notNullable()
-        .references('id')
-        .inTable('teams')
-        .onUpdate('CASCADE')
-        .onDelete('CASCADE')
-      table.string('email').notNullable()
+        .unique()
       table.timestamps()
     })
   }
 
   down() {
-    this.drop('invites')
+    this.drop('teams')
   }
 }
 
-module.exports = InviteSchema
+module.exports = TeamSchema
