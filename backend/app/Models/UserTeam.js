@@ -17,7 +17,7 @@ class UserTeam extends Model {
   }
 
   user() {
-    return this.belongTo('App/Models/User')
+    return this.belongsTo('App/Models/User')
   }
 }
 
