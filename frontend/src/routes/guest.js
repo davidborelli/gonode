@@ -22,7 +22,10 @@ GuestRoute.defaultProps = {
 };
 
 GuestRoute.propTypes = {
-  component: PropTypes.func.isRequired,
+  component: PropTypes.oneOfType([
+    PropTypes.objectOf(PropTypes.any),
+    PropTypes.func,
+  ]).isRequired,
   location: PropTypes.objectOf(PropTypes.any),
 };
 
