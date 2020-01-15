@@ -12,8 +12,8 @@ export default Creators;
 
 // Reducers
 export const INITIAL_STATE = Immutable({
-  signedIn: false,
-  token: null,
+  signedIn: !!localStorage.getItem('@TaskMan:token'),
+  token: localStorage.getItem('@TaskMan:token') || null,
 });
 
 export const success = (state, { token }) =>

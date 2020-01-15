@@ -18,7 +18,10 @@
     "implicit-arrow-linebreak": "off",
     "react/prefer-stateless-function": "off",
     "no-useless-constructor": "off",
-    "react/static-property-placement": "off"
+    "react/static-property-placement": "off",
+    "no-confusing-arrow": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-curly-newline": "off"
   },
   "settings": {
     "import/resolver": {
