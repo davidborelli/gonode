@@ -24,3 +24,10 @@ export function* signIn({ email, password }) {
     );
   }
 }
+
+export function* signOut() {
+  localStorage.removeItem('@TaskMan:token');
+  localStorage.removeItem('@TaskMan:team');
+
+  yield put(push('/signin'));
+}
