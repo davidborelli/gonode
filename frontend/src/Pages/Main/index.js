@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import api from '~/services/api';
+import TeamSwitcher from '~/components/TeamSwitcher';
 
-export default class Main extends Component {
-  componentDidMount() {
-    api.get('/teste');
-  }
+import * as S from './styles';
 
-  render() {
-    return (
-      <>
-        <div>Main</div>
-      </>
-    );
-  }
+function Main() {
+  return (
+    <S.Container>
+      <TeamSwitcher />
+    </S.Container>
+  );
 }
+
+export default Main;
