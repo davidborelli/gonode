@@ -23,7 +23,8 @@
     "react/jsx-props-no-spreading": "off",
     "react/jsx-curly-newline": "off",
     "import/no-cycle": "off",
-    "object-curly-newline": "off"
+    "object-curly-newline": "off",
+    "function-paren-newline": "off"
   },
   "settings": {
     "import/resolver": {
