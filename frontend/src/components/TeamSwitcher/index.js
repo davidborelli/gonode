@@ -6,10 +6,15 @@ import { bindActionCreators } from 'redux';
 import * as S from './styles';
 import TeamsActions from '~/store/ducks/teams';
 
+import Button from '~/styles/components/Button';
+import Modal from '../Modal';
+
 class TeamSwitcher extends Component {
   static propTypes = {
     getTeamsRequest: PropTypes.func.isRequired,
     selectTeam: PropTypes.func.isRequired,
+    openTeamModal: PropTypes.func.isRequired,
+    closeTeamModal: PropTypes.func.isRequired,
     teams: PropTypes.shape({
       data: PropTypes.arrayOf(
         PropTypes.shape({
@@ -33,7 +38,7 @@ class TeamSwitcher extends Component {
   };
 
   render() {
-    const { teams } = this.props;
+    const { teams, openTeamModal, closeTeamModal } = this.props;
 
     return (
       <S.Container>
@@ -46,6 +51,26 @@ class TeamSwitcher extends Component {
               />
             </S.Team>
           ))}
+
+          <S.NewTeam onClick={openTeamModal}>NOVO</S.NewTeam>
+
+          {teams.teamModalOpen && (
+            <Modal>
+              <h1>Criar time</h1>
+
+              <form onSubmit={() => {}}>
+                <span>NOME</span>
+                <input name="newTeam" />
+
+                <Button size="big" type="submit">
+                  Salvar
+                </Button>
+                <Button onClick={closeTeamModal} size="small" color="gray">
+                  Cancelar
+                </Button>
+              </form>
+            </Modal>
+          )}
         </S.TeamList>
       </S.Container>
     );
