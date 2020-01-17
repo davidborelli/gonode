@@ -31,3 +31,30 @@ export function* signOut() {
 
   yield put(push('/signin'));
 }
+
+export function* signUp({ name, email, password }) {
+  try {
+    const response = yield call(api.post, 'users', { name, email, password });
+
+    localStorage.setItem('@TaskMan:token', response.data.token);
+
+    yield put(AuthActions.signInSuccess(response.data.token));
+    yield put(push('/'));
+
+    yield put(
+      toastrActions.add({
+        type: 'success',
+        title: 'Sucesso',
+        message: 'Cadastro realizado com sucesso!',
+      })
+    );
+  } catch (error) {
+    yield put(
+      toastrActions.add({
+        type: 'error',
+        title: 'Falha no cadastro',
+        message: 'Verifique os dados inseridos',
+      })
+    );
+  }
+}
