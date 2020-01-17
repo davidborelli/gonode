@@ -10,6 +10,7 @@ import MembersActions from '~/store/ducks/members';
 import * as S from './styled';
 
 import Modal from '~/components/Modal';
+import Can from '~/components/Can';
 import Button from '~/styles/components/Button';
 import Members from '../Members';
 
@@ -88,7 +89,9 @@ class Projects extends Component {
         <header>
           <h1>{activeTeam.name}</h1>
           <div>
-            <Button onClick={openProjectModal}>+ Novo</Button>
+            <Can checkPermission="projects_create">
+              <Button onClick={openProjectModal}>+ Novo</Button>
+            </Can>
             <Button onClick={openMembersModal}>Membros</Button>
           </div>
         </header>
