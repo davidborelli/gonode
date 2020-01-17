@@ -16,6 +16,7 @@ class Members extends Component {
     closeMembersModal: PropTypes.func.isRequired,
     getMembersRequest: PropTypes.func.isRequired,
     updateMemberRequest: PropTypes.func.isRequired,
+    inviteMemberRequest: PropTypes.func.isRequired,
     members: PropTypes.shape({
       data: PropTypes.arrayOf(
         PropTypes.shape({
@@ -30,6 +31,7 @@ class Members extends Component {
     super(props);
     this.state = {
       roles: [],
+      invite: '',
     };
   }
 
@@ -42,6 +44,19 @@ class Members extends Component {
     this.setState({ roles: response.data });
   }
 
+  handleInputChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+
+  handleInvite = event => {
+    event.preventDefault();
+
+    const { inviteMemberRequest } = this.props;
+    const { invite } = this.state;
+
+    inviteMemberRequest(invite);
+  };
+
   handleRolesChange = (id, roles) => {
     const { updateMemberRequest } = this.props;
 
@@ -50,13 +65,23 @@ class Members extends Component {
 
   render() {
     const { closeMembersModal, members } = this.props;
-    const { roles } = this.state;
+    const { roles, invite } = this.state;
 
     return (
       <Modal size="big">
         <h1>Membros</h1>
 
-        <form onSubmit={() => {}}>
+        <S.Invite onSubmit={this.handleInvite}>
+          <input
+            name="invite"
+            placeholder="Convidar para o time"
+            value={invite}
+            onChange={this.handleInputChange}
+          />
+          <Button type="submit">Enviar</Button>
+        </S.Invite>
+
+        <form onSubmit={this.handleInvite}>
           <S.MembersList>
             {members.data.map(member => (
               <li key={member.id}>
